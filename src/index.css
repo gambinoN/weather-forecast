@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#test {
+    background: rgb(195,126,34);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(212, 149, 25) 100%);
+}
