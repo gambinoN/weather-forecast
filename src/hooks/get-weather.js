@@ -8,7 +8,7 @@ const useWeather = ({type, debouncedLocation}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://api.weatherapi.com/v1/${type}.json?key=${apiKey}&q=${debouncedLocation}&days=5`);
+                const response = await fetch(`https://api.weatherapi.com/v1/${type}.json?key=${apiKey}&q=${debouncedLocation}&days=5`);
                   
             if (!response.ok) {
                 throw new Error('Network response was not ok.');

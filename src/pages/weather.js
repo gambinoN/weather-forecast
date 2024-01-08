@@ -29,7 +29,7 @@ const Weather = ({onLocationChange, handleChangeLocation}) => {
             {weatherData && 
                 <div id="background" className='flex flex-col justify-center items-center h-screen overflow-hidden'>
                   <div className="top-0 right-0 z-0 opacity-50" id="gradient"></div>             
-                  <form className="w-[90%] text-center flex justify-evenly items-center mb-2 mt-20">
+                  <form className="w-[90%] text-center flex justify-evenly items-center mb-2 md:mt-[10%] mt-[30%]">
                         <input
                         className="w-full h-10 px-4 rounded-md mx-auto text-graybasee font-sans font-normal"
                         id="linear"

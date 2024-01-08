@@ -79,7 +79,7 @@ const WeatherWidget = ({weatherData}) => {
 
     return ( 
         <>
-            <div className="bottom-0 mt-20 ">
+            <div className="bottom-0 md:mt-20 mt-6">
                     {weatherData.map((city, index) => {
                     const currentWeather = city.current    
                     return (

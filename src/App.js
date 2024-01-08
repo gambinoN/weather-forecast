@@ -16,6 +16,8 @@ function App() {
       setDebouncedLocation(location);
   }
 
+  console.log(debouncedLocation)
+
   useEffect(() => {
     // Function to map weather condition codes to background images or colors
     const setBackground = () => {
@@ -101,9 +103,9 @@ function App() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="flex flex-col h-screen justify-center items-center bg-cover relative w-full"
+      className="flex flex-col h-screen items-center w-full"
     >
-      <button id="linear" className="px-8 py-4 rounded-lg text-lg font-sans text-white " onClick={handleChangeLocation}>
+      <button id="linear" className="px-8 py-4 mt-4 rounded-lg text-lg font-sans text-white " onClick={handleChangeLocation}>
           Change Location
       </button> 
       <CurrentWeather weatherData={weatherData} />
@@ -113,10 +115,11 @@ function App() {
       </>)
        : (
         <>
-          <div className="absolute">
-              <button className="text-graybasee text-xl mt-7 ml-8" onClick={handleReturn}>Return to Weather</button>
-          </div>
-          <Weather onLocationChange={handleLocationChange}/>
+            <div className="absolute">
+                <button className="text-graybasee text-xl mt-[15%] ml-6" onClick={handleReturn}>Return to Weather</button>
+            </div>
+            <Weather onLocationChange={handleLocationChange}/>
+
         </>
       )}
   </>

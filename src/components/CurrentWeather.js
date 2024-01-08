@@ -23,7 +23,7 @@ function CurrentWeather({weatherData}) {
                         <p className='font-sans font-normal text-white leading-[24px] text-[20px]'>{currentWeather.wind_dir}</p>
                     </div>
                 </div>
-                <img className="mt-10 mb-20" src="../../house.png" alt="" />
+                <img className="mt-3" src="../../house.png" alt="" />
                 </div>
             }
         </div>

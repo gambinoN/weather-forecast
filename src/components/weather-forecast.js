@@ -38,8 +38,8 @@ const WeatherForecast = ({weatherData}) => {
       {isWeekly ? (
         <div id="background" className="absolute flex justify-center items-center flex-col w-full rounded-t-3xl bottom-0 h-[30%]">
           <div className="flex justify-around w-full z-10">
-            <button onClick={handleWeeklyClick} className="text-graybasee text-lg font-sans mb-6">Weekly Forecast</button>
-            <button onClick={handleHourlyClick} className="text-gray-500 text-lg font-sans mb-6">Hourly Forecast</button>
+            <button onClick={handleWeeklyClick} className="text-graybasee text-lg font-sans my-3">Weekly Forecast</button>
+            <button onClick={handleHourlyClick} className="text-gray-500 text-lg font-sans my-3">Hourly Forecast</button>
           </div>
           <div className="flex flex-row justify-around w-full">
             {weatherForecast.map((day, index) => {
@@ -53,14 +53,13 @@ const WeatherForecast = ({weatherData}) => {
                 </div>
               );
             })}
-            <div id="gradient" className="absolute right-0 z-[-2]"></div>
           </div>
         </div>
       ) : (
         <div id="background" className="absolute flex justify-center items-center flex-col w-full rounded-t-3xl bottom-0 h-[30%]">
           <div className="flex justify-around w-full">
-            <button onClick={handleWeeklyClick} className="text-gray-500 text-lg font-sans mb-6">Weekly Forecast</button>
-            <button onClick={handleHourlyClick} className="text-graybasee text-lg font-sans mb-6">Hourly Forecast</button>
+            <button onClick={handleWeeklyClick} className="text-gray-500 text-lg font-sans my-3">Weekly Forecast</button>
+            <button onClick={handleHourlyClick} className="text-graybasee text-lg font-sans my-3">Hourly Forecast</button>
           </div>
           {hourlyData ? (
             <div className="flex flex-row justify-around w-full">
@@ -77,7 +76,6 @@ const WeatherForecast = ({weatherData}) => {
                   </div>
                 );
               })}
-              <div id="gradient" className="absolute right-0 z-0"></div>
             </div>
           ) : (
             <div>Loading hourly forecast...</div>
