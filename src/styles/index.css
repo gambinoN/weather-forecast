@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#linear {
+  background: rgb(46,51,90);
+  background: linear-gradient(142deg, rgba(46,51,90,.50) 0%, rgba(28,27,51,0.3582282913165266) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26) inset;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26) inset;
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26) inset;
+}
+
+#background {
+  background: rgb(46,51,90);
+  background: linear-gradient(38deg, rgba(46,51,90,1) 0%, rgba(28,27,51,1) 100%);
+  box-shadow: 
+    1px 1px 0px 0px rgba(255,255,255,0.26) inset;
+}
+
+#gradient {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  background: rgba(157, 26, 233, 0.9);
+  filter: blur(175px);
+  bottom: 100px;
+  transform: rotate(-114.2deg);
+}
+
+#linear-forecast {
+  box-shadow: 
+    1px 1px 0px 0px rgba(255,255,255,0.26) inset,
+    5px 4px 10px 0px rgba(0,0,0,0.26);
+  -webkit-box-shadow: 
+    1px 1px 0px 0px rgba(255,255,255,0.26) inset,
+    5px 4px 10px 0px rgba(0,0,0,0.26);
+  -moz-box-shadow: 
+    1px 1px 0px 0px rgba(255,255,255,0.26) inset,
+    5px 4px 10px 0px rgba(0,0,0,0.26);
+}
