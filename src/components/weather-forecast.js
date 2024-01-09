@@ -37,7 +37,7 @@ const WeatherForecast = ({weatherData}) => {
         <>
       {isWeekly ? (
         <div id="background" className="relative flex justify-center items-center flex-col w-full rounded-t-3xl bottom-0 h-[30%]">
-          <div className="flex justify-around w-full z-10">
+          <div className="flex justify-around w-full z-10 border-b-2">
             <button onClick={handleWeeklyClick} className="text-graybasee text-lg font-sans my-3">Weekly Forecast</button>
             <button onClick={handleHourlyClick} className="text-gray-500 text-lg font-sans my-3">Hourly Forecast</button>
           </div>
@@ -57,7 +57,7 @@ const WeatherForecast = ({weatherData}) => {
         </div>
       ) : (
         <div id="background" className="relative flex justify-center items-center flex-col w-full rounded-t-3xl bottom-0 h-[30%]">
-          <div className="flex justify-around w-full">
+          <div className="flex justify-around w-full border-b-2">
             <button onClick={handleWeeklyClick} className="text-gray-500 text-lg font-sans my-3">Weekly Forecast</button>
             <button onClick={handleHourlyClick} className="text-graybasee text-lg font-sans my-3">Hourly Forecast</button>
           </div>
