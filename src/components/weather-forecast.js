@@ -53,6 +53,7 @@ const WeatherForecast = ({weatherData}) => {
                   <img className="h-[48px] aspect-auto" src={day.day.condition.icon} alt="Weather Icon" />
                   <p className="text-white font-sans text-lg">{day.day.avgtemp_c}°</p>
                 </div>
+                </div>
               );
             })}
           </div>
