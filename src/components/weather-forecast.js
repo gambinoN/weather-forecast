@@ -46,7 +46,11 @@ const WeatherForecast = ({weatherData}) => {
               const date = new Date(day.date);
               const dayOfWeek = daysOfWeek[date.getDay()];
               return (
+<<<<<<< HEAD
                 <div key={index} id="linear-forecast" className="h-[160px] w-[70px] rounded-[48px] bottom-0 flex flex-col bg-[#48319d] bg-opacity-[0.4] mb-20 mt-5 justify-evenly items-center">
+=======
+                <div key={index} id="linear-forecast" className="h-[160px] w-[70px] rounded-[48px] flex mb-20 mt-5 flex-col bg-[#48319d] bg-opacity-[0.4] justify-evenly items-center">
+>>>>>>> 09abfc05201240c453359407552f2a4ed66886b3
                   <p className="text-white font-sans text-md">{dayOfWeek}</p>
                   <img className="h-[48px] aspect-auto" src={day.day.condition.icon} alt="Weather Icon" />
                   <p className="text-white font-sans text-lg">{day.day.avgtemp_c}°</p>
@@ -69,7 +73,11 @@ const WeatherForecast = ({weatherData}) => {
                 const icon = hour.condition.icon;
 
                 return (
+<<<<<<< HEAD
                   <div id="linear-forecast" key={index} className="h-[160px] w-[70px] rounded-[48px] flex flex-col mb-10 mt-5 z-10 bg-[#48319d] bg-opacity-[0.4] justify-evenly items-center">
+=======
+                  <div id="linear-forecast" key={index} className="h-[160px] w-[70px] rounded-[48px] flex mb-20 mt-5 flex-col z-10 bg-[#48319d] bg-opacity-[0.4] justify-evenly items-center">
+>>>>>>> 09abfc05201240c453359407552f2a4ed66886b3
                     <p className="text-white font-sans text-md">{formattedHour}{hourTime > 12 ? ' AM' : ' PM'}</p>
                     <img className="h-[48px] aspect-auto" src={icon} alt="Weather Icon" />
                     <p className="text-white font-sans text-lg">{hour.temp_c}°</p>
