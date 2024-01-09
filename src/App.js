@@ -103,7 +103,7 @@ function App() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="flex flex-col h-screen items-center w-full"
+      className="flex flex-col h-full items-center w-full"
     >
       <button id="linear" className="px-8 py-4 mt-4 rounded-lg text-lg font-sans text-white " onClick={handleChangeLocation}>
           Change Location
