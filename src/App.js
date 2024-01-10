@@ -8,15 +8,25 @@ import Weather from "./pages/weather";
 function App() {
   let type = 'forecast'
   const [backgroundImage, setBackgroundImage] = useState(null)
-  const [debouncedLocation, setDebouncedLocation] = useState('Sarajevo');
-  const {weatherData} = useWeather({type, debouncedLocation})
+  const [locationName, setLocationName] = useState('Sarajevo');
+  const [debouncedLocationName, setDebouncedLocationName] = useState('Sarajevo');  
+  const {weatherData} = useWeather({type, debouncedLocationName})
   const [changeLocationBtn, setChangeLocationBtn] = useState(false)
 
-  const handleLocationChange = (location) => {
-      setDebouncedLocation(location);
+  const handleInputChange = (event) => {
+    setLocationName(event.target.value);
   }
 
-  console.log(debouncedLocation)
+useEffect(() => {
+    const delayTimer = setTimeout(() => {
+      setDebouncedLocationName(locationName);
+      if(locationName !== '') {
+        setChangeLocationBtn(false)
+      }
+    }, 1000); 
+
+    return () => clearTimeout(delayTimer);
+}, [locationName]);
 
   useEffect(() => {
     // Function to map weather condition codes to background images or colors
@@ -27,7 +37,7 @@ function App() {
         // Define background images or colors based on weather condition codes
         switch (weatherCode) {
           case 1000: // Clear
-            setBackgroundImage(isDay ? '../sunny.jpg' : '../night-background.png');
+            setBackgroundImage(isDay ? '../sunny.jpg' : '../night.avif');
             break;
           case 1006:
           case 1003:
@@ -35,7 +45,7 @@ function App() {
           case 1030:
           case 1135:  
           case 1147:
-            setBackgroundImage('../cloudy.jpg');
+            setBackgroundImage('../cloudy.png');
             break;
           case 1063: // Rain
           case 1189: 
@@ -50,7 +60,7 @@ function App() {
           case 1198:
           case 1183:
           case 1201:
-            setBackgroundImage('../rainy.jpg');
+            setBackgroundImage('../rainy.jpeg');
             break;
           case 1066: // Snow
           case 1069:
@@ -77,7 +87,7 @@ function App() {
             setBackgroundImage('../snowy.jpg');
             break;
           default:
-            setBackgroundImage('../night-background.png');
+            setBackgroundImage('../night.avif');
             break;
         }
       }
@@ -110,16 +120,26 @@ function App() {
       </button> 
       <CurrentWeather weatherData={weatherData} />
       <WeatherForecast weatherData={weatherData} />
-      
     </div>
       </>)
        : (
         <>
-            <div className="absolute">
-                <button className="text-graybasee text-xl mt-[15%] ml-6" onClick={handleReturn}>Return to Weather</button>
+          <div id="background" className="flex justify-evenly flex-col">
+          <div className="flex flex-col justify-center md:m-auto md:h-[20%] items-center md:w-[50%]">
+                <button className="text-graybasee text-xl mt-[15%] md:mt-[10%]" onClick={handleReturn}>Return to Weather</button>
+                <form className="w-[90%] text-center flex justify-evenly items-center mb-2 md:mt-[10%] mt-[10%]">
+                        <input
+                        className="w-full h-10 px-4 rounded-md mx-auto text-graybasee font-sans font-normal"
+                        id="linear"
+                        type="text"
+                        placeholder="Search for a city"
+                        value={locationName}
+                        onChange={handleInputChange}
+                        />
+                    </form>
             </div>
-            <Weather onLocationChange={handleLocationChange}/>
-
+            <Weather />
+          </div>
         </>
       )}
   </>
